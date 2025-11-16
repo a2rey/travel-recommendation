@@ -30,9 +30,37 @@ nav {
     font-weight: bold;
   }
 
+  nav h1 {
+    font-style: italic;
+  }
+
+  nav ul#search-bar {
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 5px;
+  }
+
+  nav ul#search-bar input {
+    padding: 5px;
+    border: none;
+    margin: 0;
+    color: rgb(97, 163, 220);
+  }
+
+  nav ul#search-bar input::placeholder {
+    color: rgb(97, 163, 220)
+  }
+  nav button {
+    background-color: rgb(97, 163, 220);
+    color: #ffffff;
+    padding: 3px;
+    border-radius: 5px;
+    border-color: rgb(97, 163, 220);
+  }
+
 /* Body CSS */
 body {
     overflow-x: hidden;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-    
+
 }
