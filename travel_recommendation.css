@@ -50,17 +50,55 @@ nav {
   nav ul#search-bar input::placeholder {
     color: rgb(97, 163, 220)
   }
-  nav button {
-    background-color: rgb(97, 163, 220);
-    color: #ffffff;
-    padding: 3px;
-    border-radius: 5px;
-    border-color: rgb(97, 163, 220);
-  }
+
 
 /* Body CSS */
 body {
     overflow-x: hidden;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    background: url(./images/mavicure.jpg) no-repeat fixed center center;
+    background-size: 100% 100%;
+} 
 
+.container {
+    display: flex;
+    flex-flow: row;
+    width: 50%;
+    margin-left: 20px;
+}
+.body-text {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    padding-left: 80px;
+    color: white;
+}
+.social {
+    display: flex;
+    flex-flow:column;
+    align-items:center;
+}
+.social img {
+    width:30px;
+    height:30px;
+}
+.main-title {
+    margin-top: 15%;
+    width: 400px;
+    height: 300px;
+    flex: 0 1 auto;
+    font-size: xx-large;
+}
+
+.description {
+    width: 300px;
+    height: 200px;
+    flex: 1 1 auto;
+}
+button {
+    background-color: rgb(97, 163, 220);
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 5px;
+    border-color: rgb(97, 163, 220);
 }
