@@ -40,6 +40,12 @@ nav {
     padding: 5px;
   }
 
+  nav ul#search-bar img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+  }
+
   nav ul#search-bar input {
     padding: 5px;
     border: none;
