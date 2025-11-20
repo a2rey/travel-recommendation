@@ -9,9 +9,20 @@ nav {
     background-color: #000000;
     padding: 20px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
     
+  }
+
+  #navigation {
+    position:absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    margin-top: 10px;
+    width: fit-content;
+    gap: 20px;
+    align-items: center;
+    vertical-align: middle; 
   }
   
   nav ul {
@@ -69,7 +80,7 @@ body {
 .container {
     display: flex;
     flex-flow: row;
-    width: 50%;
+    width: 60%;
     margin-left: 20px;
 }
 .body-text {
@@ -79,9 +90,16 @@ body {
     padding-left: 80px;
     color: white;
 }
+.team {
+    display: flex;
+    flex-flow: row;
+    max-width: fit-content;
+    align-items:center;
+}
 .social {
     display: flex;
     flex-flow:column;
+    padding-top: 50%;
     align-items:center;
 }
 .social img {
@@ -101,10 +119,97 @@ body {
     height: 200px;
     flex: 1 1 auto;
 }
+.about-description {
+    width: 90%;
+    height: 200px;
+    flex: 1 1 auto;
+}
 button {
     background-color: rgb(97, 163, 220);
     color: #ffffff;
     padding: 5px;
+    border-radius: 5px;
+    border-color: rgb(97, 163, 220);
+}
+button:hover {
+    background-color: #ffffff;
+    color: rgb(97, 163, 220);
+    border-color: rgb(97, 163, 220);
+    cursor: pointer;
+}
+.card {
+    display: flex;
+    flex-flow: row;
+    width: 190px;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: #000000 0px 4px 8px 0px;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px;
+}
+.avatar {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+}
+.avatar-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.name-team-member {
+    font-size: x-small;
+    font-weight: bold;
+    justify-content: left;
+}
+.responsibility{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: x-small;
+    overflow: hidden;
+    font-weight: light;
+    justify-content: left;
+}
+.role-container {
+    margin-top: 20px;
+    justify-content: center;
+    width: 100%;
+}
+.role-badge {
+    background-color: rgb(6, 38, 66);
+    color: #ffffff;
+    padding: 10px;
+    max-width:fit-content;
+    border-radius: 5px;
+    font-size: x-small;
+    border-color: #ffffff;
+    border-style: solid;
+    border-width: 1px;
+}
+.contact-form {
+    position: absolute;
+    left: 60%;
+    display: flex;
+    flex-flow: column;
+    width: 40%;
+    margin: auto;
+    margin-top: 5%;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+}
+.contact-form input, .contact-form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+.contact-form input[type="submit"] {
+    background-color: rgb(97, 163, 220);
+    color: #ffffff;
+    padding: 10px;
     border-radius: 5px;
     border-color: rgb(97, 163, 220);
 }
