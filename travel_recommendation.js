@@ -3,11 +3,23 @@ const keywordsInput = document.getElementById('keywordsInput');
 const clear = document.getElementById('clearResults');
 const bookBtn = document.getElementById('book');
 
+function pluralize(word) {
+    const rule1Endings = /(ch|s|sh|x|z)$/;
+    const rule2Endings = /[^aeiou]y$/;
+    if (rule1Endings.test(word)) {
+        return word + 'es';
+    } else if (rule2Endings.test(word)) {
+        return word.slice(0, -1) + 'ies';
+    } else {
+        return word + 's';
+    }
+}
+
 function searchResults(keywords) {
     fetch('./travel_recommendation_api.json')
     .then(response => response.json())
     .then(data => {
-        if (keywords.trim() === 'countries') {
+        if (keywords.trim() === 'countries' || keywords.trim() === 'country') {
             data['countries'].forEach(destination => {
                 document.getElementsByClassName('recommendations')[0].innerHTML = `<div id="top"></div>`;
                 destination.cities.forEach(city => {
@@ -28,8 +40,11 @@ function searchResults(keywords) {
                     document.getElementsByClassName('recommendations')[0].appendChild(recommendationDiv);
                 });
             });
-        } else if (data[keywords.trim()]) {
+        } else if (data[keywords.trim()] || data[pluralize(keywords.trim())]) {
             document.getElementsByClassName('recommendations')[0].innerHTML = `<div id="top"></div>`;
+            if (data[pluralize(keywords.trim())]) {
+                keywords = pluralize(keywords.trim());
+            }
             data[keywords.trim()].forEach(destination => {
                 const recommendationDiv = document.createElement('div');
                 recommendationDiv.className = 'recommendation-item';
@@ -50,7 +65,10 @@ function searchResults(keywords) {
         } else if (keywords.trim() === '') {
             document.getElementsByClassName('recommendations')[0].style.visibility = 'hidden';
             alert('No keywords were given.');
-        } 
+        } else if (!keywords.trim()) {
+            document.getElementsByClassName('recommendations')[0].style.visibility = 'hidden';
+            alert('No coincident results.');
+        }
     })
     .catch(error => {
         console.error('Error fetching recommendations:', error);
